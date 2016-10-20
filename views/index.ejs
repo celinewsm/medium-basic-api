@@ -3,80 +3,92 @@
   <head>
     <meta charset="utf-8">
     <title>React: API instructions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+    <style media="screen">
+      .container{
+        width: 80%;
+      }
+    </style>
   </head>
   <body>
-    <h1>API instructions</h1>
-    <h3>Create Article</h3>
-    <p>
-      POST: https://medium-basic-api.herokuapp.com/article/new<br/>
-      data (to server): {<br/>
-        title: "This is the title of your article",<br/>
-        content: "This is the body of your article",<br/>
-        imageUrl: "https://images.medium.com/0*fkfQiTzT7TlUGGyI.png",<br/>
-        author: "Author Name"<br/>
-      }<br/>
-      data (from server): {<br/>
-        status: "created"<br/>
-        data: {<br/>
-          id: 0123,<br/>
-          title: "This is the title of your article",<br/>
-          content: "This is the body of your article",<br/>
-          imageUrl: "https://images.medium.com/0*fkfQiTzT7TlUGGyI.png",<br/>
-          author: "Author Name"<br/>
+    <div class="container">
+      <h1>API instructions</h1>
+      <h3>Create Article</h3>
+      <pre><code>
+        <strong>POST:</strong> https://medium-basic-api.herokuapp.com/article/new
+        data (to server): {
+          title: "This is the title of your article",
+          content: "This is the body of your article",
+          imageUrl: "https://images.medium.com/0*fkfQiTzT7TlUGGyI.png",
+          author: "Author Name"
         }
-    <h3>Read Articles</h3>
-    <p>
-        GET: https://medium-basic-api.herokuapp.com/articles<br/>
-        data (to server): {<br/>
-          id: 0123,<br/>
-          title: "This is the title of your article",<br/>
-          content: "This is the body of your article",<br/>
-          imageUrl: "https://images.medium.com/0*fkfQiTzT7TlUGGyI.png",<br/>
-          author: "Author Name"<br/>
-        }
-    </p>
-    <h3>Read Article</h3>
-    <p>
-        GET: https://medium-basic-api.herokuapp.com/article/:id<br/>
-        data (to server): {<br/>
-          id: 0123,<br/>
-        }<br/>
-        data (from server): {<br/>
-          status: "found"<br/>
-          data: {<br/>
-            id: 0123,<br/>
-            title: "This is the title of your article",<br/>
-            content: "This is the body of your article",<br/>
-            imageUrl: "https://images.medium.com/0*fkfQiTzT7TlUGGyI.png",<br/>
-            author: "Author Name"<br/>
+        data (from server): {
+          status: "created"
+          data: {
+            id: 0123,
+            title: "This is the title of your article",
+            content: "This is the body of your article",
+            imageUrl: "https://images.medium.com/0*fkfQiTzT7TlUGGyI.png",
+            author: "Author Name"
           }
-        }<br/>
-    </p>
-    <h3>Update/Edit Article</h3>
-    <p>
-        PUT: https://medium-basic-api.herokuapp.com/article/:id/edit<br/>
-        data (to server): {<br/>
-          id: 0123,<br/>
-          title: "This is the title of your article",<br/>
-          content: "This is the body of your article",<br/>
-          imageUrl: "https://images.medium.com/0*fkfQiTzT7TlUGGyI.png",<br/>
-          author: "Author Name"<br/>
-        }<br/>
-        data (from server): {<br/>
-          status: "updated"<br/>
+      </code></pre>
+      <h3>Read Articles</h3>
+      <pre><code>
+          <strong>GET:</strong> https://medium-basic-api.herokuapp.com/articles
+          data (to server): {
+            No params/data required. Just get.
           }
-    </p>
-    <h3>Delete Article</h3>
-    <p>
-        DELETE: https://medium-basic-api.herokuapp.com/article/:id/delete<br/>
-        data (to server): {<br/>
-          id: req.params.id<br/>
-        }<br/>
-        data (from server): {<br/>
-          status: "deleted"<br/>
+          data (from server): {
+            id: 0123,
+            title: "This is the title of your article",
+            content: "This is the body of your article",
+            imageUrl: "https://images.medium.com/0*fkfQiTzT7TlUGGyI.png",
+            author: "Author Name"
           }
-        }<br/>
-    </p>
+      </code></pre>
+      <h3>Read Article</h3>
+      <pre><code>
+          <strong>GET:</strong> https://medium-basic-api.herokuapp.com/article/:id
+          data (to server): {
+            id: 0123,
+          }
+          data (from server): {
+            status: "found"
+            data: {
+              id: 0123,
+              title: "This is the title of your article",
+              content: "This is the body of your article",
+              imageUrl: "https://images.medium.com/0*fkfQiTzT7TlUGGyI.png",
+              author: "Author Name"
+            }
+          }
+      </code></pre>
+      <h3>Update/Edit Article</h3>
+      <pre><code>
+          <strong>PUT:</strong> https://medium-basic-api.herokuapp.com/article/:id/edit
+          data (to server): {
+            id: 0123,
+            title: "This is the title of your article",
+            content: "This is the body of your article",
+            imageUrl: "https://images.medium.com/0*fkfQiTzT7TlUGGyI.png",
+            author: "Author Name"
+          }
+          data (from server): {
+            status: "updated"
+            }
+      </code></pre>
+      <h3>Delete Article</h3>
+      <pre><code>
+          <strong>DELETE:</strong> https://medium-basic-api.herokuapp.com/article/:id/delete
+          data (to server): {
+            id: req.params.id
+          }
+          data (from server): {
+            status: "deleted"
+            }
+          }
+      </code></pre>
 
+    </div>
   </body>
 </html>
