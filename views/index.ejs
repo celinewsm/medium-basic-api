@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>API instructions</h1>
+    <h3>Create Article</h3>
+    <p>
+      POST: http://localhost:3000/article/new<br/>
+      data (to server): {<br/>
+        title: "This is the title of your article",<br/>
+        content: "This is the body of your article",<br/>
+        imageUrl: "https://images.medium.com/0*fkfQiTzT7TlUGGyI.png",<br/>
+        author: "Author Name"<br/>
+      }<br/>
+      data (from server): {<br/>
+        status: "created"<br/>
+        data: {<br/>
+          id: 0123,<br/>
+          title: "This is the title of your article",<br/>
+          content: "This is the body of your article",<br/>
+          imageUrl: "https://images.medium.com/0*fkfQiTzT7TlUGGyI.png",<br/>
+          author: "Author Name"<br/>
+        }
+    <h3>Read Articles</h3>
+    <p>
+        GET: http://localhost:3000/articles<br/>
+        data (to server): {<br/>
+          id: 0123,<br/>
+          title: "This is the title of your article",<br/>
+          content: "This is the body of your article",<br/>
+          imageUrl: "https://images.medium.com/0*fkfQiTzT7TlUGGyI.png",<br/>
+          author: "Author Name"<br/>
+        }
+    </p>
+    <h3>Read Article</h3>
+    <p>
+        GET: http://localhost:3000/article/:id<br/>
+        data (to server): {<br/>
+          id: 0123,<br/>
+        }<br/>
+        data (from server): {<br/>
+          status: "found"<br/>
+          data: {<br/>
+            id: 0123,<br/>
+            title: "This is the title of your article",<br/>
+            content: "This is the body of your article",<br/>
+            imageUrl: "https://images.medium.com/0*fkfQiTzT7TlUGGyI.png",<br/>
+            author: "Author Name"<br/>
+          }
+        }<br/>
+    </p>
+    <h3>Update/Edit Article</h3>
+    <p>
+        PUT: http://localhost:3000/article/:id/edit<br/>
+        data (to server): {<br/>
+          id: 0123,<br/>
+          title: "This is the title of your article",<br/>
+          content: "This is the body of your article",<br/>
+          imageUrl: "https://images.medium.com/0*fkfQiTzT7TlUGGyI.png",<br/>
+          author: "Author Name"<br/>
+        }<br/>
+        data (from server): {<br/>
+          status: "updated"<br/>
+          }
+    </p>
+    <h3>Delete Article</h3>
+    <p>
+        DELETE: http://localhost:3000/article/:id/delete<br/>
+        data (to server): {<br/>
+          id: req.params.id<br/>
+        }<br/>
+        data (from server): {<br/>
+          status: "deleted"<br/>
+          }
+        }<br/>
+    </p>
+
+  </body>
+</html>
