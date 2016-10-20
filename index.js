@@ -57,8 +57,14 @@ app.put('/article/:id/edit',function(req,res){
   where: {
     id: req.params.id
   }
-}).then(function (article) {
-    res.json({status: "updated"})
+}).then(function () {
+
+  db.article.findById(req.params.id).then(function(article) {
+    res.json({status: "updated",
+              data: article})
+  })
+
+    // res.json({status: "updated",data: })
   }).catch(function () {
       res.json({status: "failed"})
     })

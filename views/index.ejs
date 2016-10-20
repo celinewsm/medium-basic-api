@@ -74,8 +74,15 @@
             author: "Author Name"
           }
           data (from server): {
-            status: "updated"
+            "status": "updated",
+            "data": {
+              id: 0123,
+              title: "This is the title of your article",
+              content: "This is the body of your article",
+              imageUrl: "https://images.medium.com/0*fkfQiTzT7TlUGGyI.png",
+              author: "Author Name"
             }
+          }
       </code></pre>
       <h3>Delete Article</h3>
       <pre><code>
